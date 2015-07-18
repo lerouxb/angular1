@@ -1,0 +1,41 @@
+<div class="fund-header">
+  <h1>{{fund.name}}</h1>
+</div>
+
+<div class="fund-properties">
+  <dl>
+    <dt>ISIN</dt>
+    <dd>{{fund['ISIN Code']}}</dd>
+
+    <dt>Date</dt>
+    <dd>{{fund['Report Date From']|fuzzydate:'MM/dd/yyyy'}}</dd>
+
+    <dt>Currency</dt>
+    <dd>{{fund['Fund Size Currency Code']}}</dd>
+
+    <dt>NAV</dt>
+    <dd>{{fund['NAV Base']|currency:''}}</dd>
+
+    <dt>Asset Class</dt>
+    <dd>{{fund['Asset Class Taxonomy Id']}}</dd>
+
+    <dt>Region</dt>
+    <dd>{{fund['Region Taxonomy Id']}}</dd>
+
+    <dt>Organization</dt>
+    <dd>{{fund['Organization Id']}}</dd>
+  </dl>
+</div>
+
+<div class="fund-dropdown">
+  <select ng-model="selectedCode">
+    <option ng-repeat="isin in fund.shareClasses" value="{{isin['ISIN Code']}}">{{isin['Short Name']}}</option>
+  </select>
+</div>
+
+
+<div class="isin" ng-if="!fundIsOld()" isin-properties-table isin="selectedISIN"></div>
+<div class="isin" ng-if="fundIsOld()" isin-properties-list isin="selectedISIN"></div>
+
+<button>chart toggle goes here</button>
+
