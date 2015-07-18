@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var fundModule = module.exports = angular.module('fundsApp.fund', ['ngResource']);
 
 FOUR_YEARS = 1000*60*60*24*365*4; // in milliseconds
@@ -42,15 +44,27 @@ fundModule.directive('fundInfo', [
         fund: '='
       },
       controller: function($scope) {
-        $scope.selectedISIN = $scope.fund.shareClasses[0]
-        $scope.selectedCode = $scope.selectedISIN['ISIN Code'];
-
+        // this still feels like it should be a method on a fund object, but
+        // maybe not in angular, I guess?
         $scope.fundIsOld = function() {
           var launchDate = new Date($scope.selectedISIN['Launch Date']);
           return new Date() - launchDate > FOUR_YEARS;
         };
 
-        // watch selectedISIN?
+        $scope.$watch('selectedCode', function(selectedCode) {
+          selectedISIN = _.find($scope.fund.shareClasses, function(isin) {
+            return (isin['ISIN Code'] == selectedCode);
+          });
+          if (selectedISIN) {
+            $scope.selectedISIN = selectedISIN;
+          } else {
+            // TODO: error? Not technically possible as you can only select
+            // what's there..
+          }
+        });
+
+        firstISIN = $scope.fund.shareClasses[0];
+        $scope.selectedCode = firstISIN['ISIN Code']
       },
       template: require('./fund_info.html')
     }
