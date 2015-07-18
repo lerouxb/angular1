@@ -1,18 +1,34 @@
-<dl>
-  <dt>ISIN</dt>
-  <dd>{{isin['ISIN Code']}}</dd>
-  <dt>Compound Return 1 Year Annual</dt>
-  <dd>{{isin['Compound Return 1 Year Annual']|currency:''}}</dd>
-  <dt>Name</dt>
-  <dd>{{isin['Short Name']}}</dd>
-  <dt>Launch Date</dt>
-  <dd>{{isin['Launch Date']|fuzzydate:'MM/dd/yyyy'}}</dd>
-  <dt>Currency</dt>
-  <dd>{{isin['Fund Size Currency Code']}}</dd>
-  <dt>Yield</dt>
-  <dd>{{isin['Yield Current']}} %</dd>
-  <dt>Date</dt>
-  <dd>{{isin['Report Date From']|fuzzydate:'dd MMM yyyy'}}</dd>
-  <dt>NAV</dt>
-  <dd>{{isin['NAV Base']|currency:''}}</dd>
-</dl>
+<div class="pairs">
+  <div class="pair">
+    <div class="key">ISIN</div>
+    <div class="value">{{isin['ISIN Code']}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">Compound Return 1 Year Annual</div>
+    <div class="value">{{isin['Compound Return 1 Year Annual']|currency:''}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">Name</div>
+    <div class="value">{{isin['Short Name']}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">Launch Date</div>
+    <div class="value">{{isin['Launch Date']|fuzzydate:'MM/dd/yyyy'}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">Currency</div>
+    <div class="value">{{isin['Fund Size Currency Code']}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">Yield</div>
+    <div class="value">{{isin['Yield Current']}} %</div>
+  </div>
+  <div class="pair">
+    <div class="key">Date</div>
+    <div class="value">{{isin['Report Date From']|fuzzydate:'dd MMM yyyy'}}</div>
+  </div>
+  <div class="pair">
+    <div class="key">NAV</div>
+    <div class="value">{{isin['NAV Base']|currency:''}}</div>
+  </div>
+</div>

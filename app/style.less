@@ -1,7 +1,12 @@
 body {
-  //background-color: red;
-  font-family: sans-serif;
-  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    margin: 20px;
+  }
 }
 
 .fund + .fund {
@@ -9,24 +14,53 @@ body {
   margin-top: 20px;
 }
 
-dl {
+.pairs {
   display: flex;
   flex-wrap: wrap;
+  margin: 20px 0;
 }
 
-dt, dd {
-  margin: 0;
-  padding: 4px;
+.pair {
+  display: flex;
+  padding: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+}
+
+@columnWidth: 240px;
+
+@media screen and (min-width: (@columnWidth*2)) {
+  .pair {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: (@columnWidth*3)) {
+  .pair {
+    max-width: 33.3%;
+  }
+}
+@media screen and (min-width: (@columnWidth*4)) {
+  .pair {
+    max-width: 25%;
+  }
+}
+@media screen and (min-width: (@columnWidth*5)) {
+  .pair {
+    max-width: 20%;
+  }
+}
+
+.key, .value {
+  padding: 4px 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   background-color: #f8f8f8;
-  margin: 2px;
-  width: 160px;
+  width: 50%;
+}
+.key {
+}
+.value {
 }
 
-dt {
-  margin-right: 0;
-}
-dd {
-  margin-left: 0;
-}

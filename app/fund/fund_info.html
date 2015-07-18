@@ -3,28 +3,42 @@
 </div>
 
 <div class="fund-properties">
-  <dl>
-    <dt>ISIN</dt>
-    <dd>{{fund['ISIN Code']}}</dd>
+  <div class="pairs">
+    <div class="pair">
+      <div class="key">ISIN</div>
+      <div class="value">{{fund['ISIN Code']}}</div>
+    </div>
 
-    <dt>Date</dt>
-    <dd>{{fund['Report Date From']|fuzzydate:'MM/dd/yyyy'}}</dd>
+    <div class="pair">
+      <div class="key">Date</div>
+      <div class="value">{{fund['Report Date From']|fuzzydate:'MM/dd/yyyy'}}</div>
+    </div>
 
-    <dt>Currency</dt>
-    <dd>{{fund['Fund Size Currency Code']}}</dd>
+    <div class="pair">
+      <div class="key">Currency</div>
+      <div class="value">{{fund['Fund Size Currency Code']}}</div>
+    </div>
 
-    <dt>NAV</dt>
-    <dd>{{fund['NAV Base']|currency:''}}</dd>
+    <div class="pair">
+      <div class="key">NAV</div>
+      <div class="value">{{fund['NAV Base']|currency:''}}</div>
+    </div>
 
-    <dt>Asset Class</dt>
-    <dd>{{fund['Asset Class Taxonomy Id']}}</dd>
+    <div class="pair">
+      <div class="key">Asset Class</div>
+      <div class="value">{{fund['Asset Class Taxonomy Id']}}</div>
+    </div>
 
-    <dt>Region</dt>
-    <dd>{{fund['Region Taxonomy Id']}}</dd>
+    <div class="pair">
+      <div class="key">Region</div>
+      <div class="value">{{fund['Region Taxonomy Id']}}</div>
+    </div>
 
-    <dt>Organization</dt>
-    <dd>{{fund['Organization Id']}}</dd>
-  </dl>
+    <div class="pair">
+      <div class="key">Organization</div>
+      <div class="value">{{fund['Organization Id']}}</div>
+    </div>
+  </div>
 </div>
 
 <div class="fund-dropdown">
