@@ -1,6 +1,7 @@
 var _ = require('underscore');
 
-var fundModule = module.exports = angular.module('fundsApp.fund', ['ngResource']);
+var fundModule = module.exports = angular.module('fundsApp.fund', [
+  'ngResource', 'fundsApp.filter']);
 
 FOUR_YEARS = 1000*60*60*24*365*4; // in milliseconds
 
@@ -26,15 +27,6 @@ fundModule.directive('FundsList', [
   function() {
   }]);
 */
-
-// TODO: move to separate module..
-fundModule.filter('fuzzydate', ['dateFilter', function(dateFilter) {
-  return function(input, format, timezone) {
-    var transformed = new Date(input.replace(' ', 'T')+'Z');
-    var dateString = dateFilter(transformed, format, timezone);
-    return dateString;
-  };
-}]);
 
 fundModule.directive('fundInfo', [
   function() {

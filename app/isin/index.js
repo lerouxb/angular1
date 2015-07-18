@@ -1,4 +1,5 @@
-var isinModule = module.exports = angular.module('fundsApp.isin', []);
+var isinModule = module.exports = angular.module('fundsApp.isin', [
+  'fundsApp.filter']);
 
 isinModule.directive('isinPropertiesTable', [
   function() {
