@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 var fundModule = module.exports = angular.module('fundsApp.fund', [
-  'ngResource', 'fundsApp.filter']);
+  'ngResource', 'fundsApp.filters']);
 
 FOUR_YEARS = 1000*60*60*24*365*4; // in milliseconds
 
