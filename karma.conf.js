@@ -4,7 +4,9 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'dist/bundle.js'
+      'dist/bundle.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'app/*/*_test.js'
     ],
 
     autoWatch : true,
